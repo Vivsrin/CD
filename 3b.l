@@ -22,7 +22,7 @@ expression ({identifier}|{number}){operator}
 %%
 main()
 {
-yyin=fopen("source1.txt","r");
+yyin=fopen("source3b.txt","r");
 yylex();
 fclose(yyin);
 }
