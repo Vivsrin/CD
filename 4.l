@@ -17,7 +17,7 @@ type "int"|"float"|"char"
 . ;
 %%
 int main(){
-yyin = fopen("file4.txt", "r");
+yyin = fopen("4.txt", "r");
 yylex();
 fclose(yyin);
 }
