@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
+//single line comment
 /*
 /*
 dfgdfgd
@@ -17,4 +18,5 @@ a=a+b;
 fsdgdgds
 sdgfsd
 sdfsdf
+//another single line comment
 }
