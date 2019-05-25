@@ -16,7 +16,7 @@ ws [ \t\n]*
 . ;
 %%
 int main(){
-yyin = fopen("s5.txt", "r");
+yyin = fopen("file5.txt", "r");
 yylex();
 fclose(yyin);
 }
