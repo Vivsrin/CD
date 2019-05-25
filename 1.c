@@ -1,46 +1,40 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
-int main()
-{
+int main(){
 FILE *fp;
-int strcheck=0;
-int i;
-int lineno=0;
-int string=0;
+int o, c, s, i, j, l=0, sc;
 char line[100];
-int open,close;
-clrscr();
 fp=fopen("file1.txt", "r");
-if(fp==NULL)
-{
- printf("File cant be opened\n");
- exit(0);
+if(fp==NULL){
+printf("File can't be opened\n");
+exit(0);
 }
-printf("File opened correctly!\n");
-while(fgets(line, sizeof(line), fp)!=NULL)
-{
- lineno++;
- strcheck=0;
- string=0;
- open=close=0;
- for(i=0;i<strlen(line);i++)
- {
- if(line[i]=='"')
- {
- string=1;
- if(open==1&&close==0) close=1;
- else if(open==0&&close==0) open=1;
- else if(open==1&&close==1) close=0;
- }
- }
- if(open==1 &&close==0)
- {
- printf("\n Unterminated string in line %d. String Has to be closed", lineno);
- strcheck=1;
- }
- else if(string==1 && strcheck==0){
- printf("\n String usage in line %d is validated!",lineno);
- }
+printf("File opened\n");
+while(fgets(line, sizeof(line), fp)!=NULL){
+l++;
+s=0, o=0, c=0, sc=0, j=0;
+for(i=0;i<strlen(line);i++){
+if(o==0 && i>j && line[i]=='\''){
+if((i+2)<strlen(line) && line[i+2]=='\'')
+printf("Valid char constant in line no: %d\n", l);
+else
+printf("Unterminated char constant in line no: %d\n", l);
+j=i+2;
+}
+if(line[i]=='"'){
+s=1;
+if(o==1 && c==0) c=1;
+else if(o==0 && c==0) o=1;
+else if(o==1 && c==1) c=0;
+}
+}
+if(o==1 && c==0){
+printf("Unterminated string in line no: %d\n", l);
+sc=1;
+}
+if(s==1 && sc==0)
+printf("String usage in line no: %d validated\n", l);
 }
 return 0;
 }
