@@ -5,11 +5,12 @@
 %%
 exp:exp exp '*'
 exp:exp exp '+'
+exp:'(' exp ')'
 exp:ID
 %%
 main()
 {
-printf("enter the expression for the grammar \n S-->SS+ | SS* | a");
+printf("enter the expression for the grammar \n S-->SS+ | SS* | (S) | a");
 yyparse();
 printf("valid experession\n");
 }
