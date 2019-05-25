@@ -24,7 +24,7 @@ un (("++")|("--"))
 . ;
 %%
 int main(){
-yyin=fopen("src.txt", "r");
+yyin=fopen("file3.txt", "r");
 yylex();
 fclose(yyin);
 }
