@@ -12,7 +12,7 @@ main()
 {
 printf("enter the expression for the grammar \n S-->SS+ | SS* | (S) | a");
 yyparse();
-printf("valid experession\n");
+printf("valid expression\n");
 }
 void yyerror()
 {
