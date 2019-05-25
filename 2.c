@@ -1,56 +1,34 @@
 #include<stdio.h>
 #include<string.h>
-int main()
-{
+#include<stdlib.h>
+int main(){
 FILE *fp;
-int commentcheck=0;
-int i;
-int lineno=0;
-int comment=0;
+int s, e, o=0, l=0, cc=0;
 char line[100];
-int open=0,close=0,openlineno,closelineno;
-clrscr();
 fp=fopen("file2.txt", "r");
-if(fp==NULL)
-{
- printf("File cant be opened\n");
- exit(0);
+if(fp==NULL){
+printf("Can't open file\n");
+exit(0);
 }
-printf("File opened correctly!\n");
-while(fgets(line, sizeof(line), fp)!=NULL)
-{
- lineno++;
- getch();
- commentcheck=0;
- comment=0;
- if(open==1&&close==0)
- printf("\n%s",line);
- if(strstr(line,"/*")&&open==0)
- {
- open=1;close=0;
- comment=1;
- openlineno=lineno;
- printf("\n%s",line);
- }
- if(strstr(line,"*/")&&close==0&&open==1)
- {
- closelineno=lineno;
- if(open==1&&close==0)
- {
- close=1;
- open=0;
- printf("\n Comment is displayed above!\nComment opened in line no %d and closed in
-line no %d",openlineno,closelineno);
- }
- }
+printf("File opened\n");
+while(fgets(line, sizeof(line), fp)!=NULL){
+l++;
+if(o==1)
+printf("%s", line);
+else if(strstr(line, "//"))
+printf("\nSingle line comment in line no: %d\n", l);
+if(strstr(line, "/*") && o==0){
+o=1;
+s=l;
+printf("%s", line);
 }
- if(open==1 &&close==0)
- {
- printf("\n Unterminated comment in begin in line no %d. It Has to be closed", openlineno);
- commentcheck=1;
- }
- else if(comment==1 && commentcheck==0){
- printf("\n Comment usage in line %d is validated!",lineno);
- }
+if(strstr(line, "*/") && o==1){
+o=0;
+e=l;
+printf("\nValid multi-line comment from line %d to %d\n", s, e);
+}
+}
+if(o==1)
+printf("\nUnterminated comment in line %d\n", s);
 return 0;
 }
