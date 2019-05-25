@@ -5,7 +5,7 @@ int main(){
 FILE *fp;
 int s, e, o=0, l=0, cc=0;
 char line[100];
-fp=fopen("file2.txt", "r");
+fp=fopen("2.txt", "r");
 if(fp==NULL){
 printf("Can't open file\n");
 exit(0);
