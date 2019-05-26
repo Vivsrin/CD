@@ -23,9 +23,9 @@ logexp : '(' logexp ')'
 relexp : '(' relexp ')'
 | relexp '<' relexp {$$=$1<$3;}
 | relexp '>' relexp {$$=$1>$3;}
-| relexp '>' '=' relexp {$$=$1>=$3;}
-| relexp '<' '=' relexp {$$=$1<=$3;}
-| relexp '=' '=' relexp {$$=$1==$3;}
+| relexp '>' '=' relexp {$$=$1>=$4;}
+| relexp '<' '=' relexp {$$=$1<=$4;}
+| relexp '=' '=' relexp {$$=$1==$4;}
 | relexp '#' relexp {$$=$1!=$3;}
 | exp
 ;
