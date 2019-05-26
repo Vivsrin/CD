@@ -5,8 +5,7 @@ int flag=0;
 %}
 %token ID num
 %%
-S:L '=' R|R
-;
+S:L '=' R|R;
 L: '*' R| ID| num;
 R:L;
 %%
