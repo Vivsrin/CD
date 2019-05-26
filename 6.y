@@ -14,10 +14,10 @@
 stmt : exp {printf(" Valid\n");}
 ;
 exp : '(' exp ')' 
-| "++" exp {printf("Unary plus prefix");$$=$2+1;printf("Result=%d",$$);}
-| exp "++" {printf("Unary plus postfix");printf("Result=%d",$$);$$=$2+1;}
-| "--" exp {printf("Unary minus prefix");$$=$2-1;printf("Result=%d",$$);}
-| exp "--" {printf("Unary minus postfix");printf("Result=%d",$$);$$=$2-1;}
+| "++" exp {printf("Unary plus prefix");$$=$3+1;printf("Result=%d",$$);}
+| exp "++" {printf("Unary plus postfix");printf("Result=%d",$$);$$=$3+1;}
+| "--" exp {printf("Unary minus prefix");$$=$3-1;printf("Result=%d",$$);}
+| exp "--" {printf("Unary minus postfix");printf("Result=%d",$$);$$=$3-1;}
 | exp '+' exp {printf("Plus\t");$$=$1+$3;printf("Result=%d",$$);}
 | exp '-' exp {printf("Minus\t");$$=$1-$3;printf("Result=%d",$$);}
 | exp '*' exp {printf("Multiplication\t");$$=$1*$3;printf("Result=%d",$$);}
