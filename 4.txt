@@ -3,13 +3,8 @@
 #include<string.h>
 void main()
 {
-int a=56;
-a=1b;
-a=a+5h;
-a=a+4.5+5.6.6;
-int a,b=78,g="78",,;
-float c=5.6,h="fg";
-sa=5;
-a=a+b;
+struct a{int b;char str;}
+struct a{};
+struct {int a char str;}
 printf("\n ");
 }
