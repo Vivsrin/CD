@@ -30,10 +30,10 @@ relexp : '(' relexp ')'
 | exp
 ;
 exp : '(' exp ')' 
-| "++" exp {printf("Unary plus prefix");$$=$2+1;}
-| exp "++" {printf("Unary plus postfix");}
-| "--" exp {printf("Unary minus prefix");$$=$2-1;}
-| exp "--" {printf("Unary minus postfix");}
+| '+''+' exp {printf("Unary plus prefix");$$=$3+1;}
+| exp '+''+' {printf("Unary plus postfix");}
+| '-''-' exp {printf("Unary minus prefix");$$=$3-1;}
+| exp '-''-' {printf("Unary minus postfix");}
 | exp '+' exp {$$=$1+$3;}
 | exp '-' exp {$$=$1-$3;}
 | exp '*' exp {$$=$1*$3;}
