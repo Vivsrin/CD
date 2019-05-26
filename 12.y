@@ -12,11 +12,11 @@ main()
 {
 printf("enter the expression for the grammar D -> TL\nT -> int | float | long int | double | static int | register int\nL -> L,ID|ID\n");
 yyparse();
-if(flag)
+if(flag){
 printf("valid experession\n");
 }
 else
-yyerror();
+yyerror();}
 void yyerror()
 {printf("Invalid expression\n");
 exit(1);
