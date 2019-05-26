@@ -1,24 +1,22 @@
 %{
 #include<stdio.h>
+#include<stdlib.h>
 int flag=0;
 %}
 %token ID num
 %%
-S:L '=' L|R {flag++;}
+S:L '=' R|R
 ;
 L: '*' R| ID| num;
 R:L;
 %%
 main()
 {
-printf("enter the expression for the grammar \n S->S=L|R\nL->*R|ID|num\nR->L");
+printf("enter the expression for the grammar \n S->L=R|R\nL->*R|ID|num\nR->L");
 yyparse();
-if(flag)
 printf("valid expression\n");
-else
-yyerror();
 }
-void yyerror()
+int yyerror()
 {
 printf("Invalid expression\n");
 exit(1);
