@@ -4,7 +4,7 @@
 int yylval;
 %}
 %%
-"int"|"float" {return type;}
+"int"|"float"|"double"|"static int"|"register int" {return type;}
 [a-zA-Z][a-zA-Z0-9]* {return ID;}
 [\t]
 . {return yytext[0];}
