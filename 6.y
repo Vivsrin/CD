@@ -14,7 +14,7 @@
 stmt : exp {printf(" Valid\n");}
 ;
 exp : '(' exp ')' 
-| '+'+' exp {printf("Unary plus prefix");$$=$3+1;printf("Result=%d",$$);}
+| '+''+' exp {printf("Unary plus prefix");$$=$3+1;printf("Result=%d",$$);}
 | exp '+''+' {printf("Unary plus postfix");printf("Result=%d",$$);$$=$3+1;}
 | '-''-' exp {printf("Unary minus prefix");$$=$3-1;printf("Result=%d",$$);}
 | exp '-''-' {printf("Unary minus postfix");printf("Result=%d",$$);$$=$3-1;}
