@@ -14,7 +14,7 @@ printf("enter the expression for the grammar \n S-->SS+ | SS* | (S) | a");
 yyparse();
 printf("valid expression\n");
 }
-void yyerror()
+int yyerror()
 {
 printf("Invalid expression\n");
 exit(1);
