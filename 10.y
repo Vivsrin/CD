@@ -3,10 +3,10 @@
 %}
 %token ID
 %%
-exp:exp exp '*'
-exp:exp exp '+'
-exp:'(' exp ')'
-exp:ID
+exp:exp exp '*';
+exp:exp exp '+';
+exp:'(' exp ')';
+exp:ID;
 %%
 main()
 {
