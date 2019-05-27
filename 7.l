@@ -10,7 +10,7 @@ int yylval;
 "double"[ ]+ {return KEY;}
 "short"[ ]+ {return KEY;}
 "long int"[ ]+ {return KEY;}
-[a-zA_Z][a-zA-Z]*[0-9]* {return ID;}
+[a-zA-Z][a-zA-Z]*[0-9]* {return ID;}
 [0-9]+ {return NUM;}
 [ \t] ;
 [;] {return COLON;}
